@@ -34,6 +34,7 @@ export default function NavbarClient({
               <Link href="/">Pricing</Link>
               {user && <Link href="/account">Account</Link>}
               {isPayingCustomer && <Link href="/articles">Articles</Link>}
+              {isPayingCustomer && <Link href="/gems">Gems</Link>}
             </nav>
           </div>
           <div className="flex justify-end flex-1 space-x-8">
