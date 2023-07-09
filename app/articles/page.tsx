@@ -2,26 +2,9 @@ import { getSession, getSubscription } from '@/app/supabase-server';
 import { redirect } from 'next/navigation';
 import Navbar from '@/components/ui/Navbar';
 import ArticlesUI from './ArticlesUI';
-import { GetStaticProps } from 'next';
 import { getAllPosts } from '../../lib/api';
-import { PostType } from '../../interfaces/post';
 
-export const getStaticProps: GetStaticProps = async () => {
-  const allPosts = await getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ]);
-
-  return {
-    props: { allPosts },
-  };
-};
-
-export default async function ArticlesPage({ allPosts }: { allPosts: PostType[] }) {
+export default async function ArticlesPage() {
   const session = await getSession();
 
   console.log('Session:', session);
@@ -38,6 +21,15 @@ export default async function ArticlesPage({ allPosts }: { allPosts: PostType[] 
   if (!isPayingCustomer) {
     return redirect('/account');
   }
+
+  const allPosts = await getAllPosts([
+    'title',
+    'date',
+    'slug',
+    'author',
+    'coverImage',
+    'excerpt'
+  ]);
 
   return (
     <>
