@@ -21,7 +21,7 @@ export default function ArticlesUI({ allPosts }: { allPosts: PostType[] }) {
           title={heroPost.title}
           coverImage={heroPost.coverImage}
           date={heroPost.date}
-          author={heroPost.author}
+          author={heroPost.author.name} // pass the name property of the author object
           slug={heroPost.slug}
           excerpt={heroPost.excerpt}
         />

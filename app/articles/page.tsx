@@ -40,10 +40,10 @@ export default async function ArticlesPage() {
     },
     content: post.content || '',
     author: {
-      name: post.author?.name || '',
-      picture: post.author?.picture || ''
+      name: post.author || '',
+      picture: '' // adjust this if you have author pictures
     }
-  }));
+  }));  
   
   return (
     <>
