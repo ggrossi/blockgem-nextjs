@@ -36,7 +36,7 @@ export default async function ArticlesPage() {
     coverImage: post.coverImage,
     excerpt: post.excerpt,
     ogImage: {
-      url: typeof post.ogImage === 'object' ? post.ogImage?.url : ''
+      url: typeof post.ogImage === 'object' ? (post.ogImage as { url: string })?.url : ''
     },
     content: post.content || '',
     author: {
