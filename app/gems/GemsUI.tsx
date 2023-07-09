@@ -6,7 +6,7 @@ export default function GemsUI() {
   const [topics, setTopics] = useState<Topic[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
+
   interface Topic {
     keyword: string;
     description: string;
@@ -18,7 +18,6 @@ export default function GemsUI() {
       };
     };
   }
-  
 
   useEffect(() => {
     let isMounted = true;
@@ -57,9 +56,15 @@ export default function GemsUI() {
         <div key={index} className="p-4 border rounded-md shadow-lg">
           <h2 className="text-xl font-bold mb-2">{topic.keyword}</h2>
           <p className="text-gray-700 mb-2">{topic.description}</p>
-          <p className="text-sm text-gray-500 mb-1">Absolute Volume: {topic.absolute_volume}</p>
-          <p className="text-sm text-gray-500">Growth (6 months): {topic.search_history?.growth['6']}</p>
-          <p className="text-sm text-gray-500">Growth (3 months): {topic.search_history?.growth['3']}</p>
+          <p className="text-sm text-gray-500 mb-1">
+            Absolute Volume: {topic.absolute_volume}
+          </p>
+          <p className="text-sm text-gray-500">
+            Growth (6 months): {topic.search_history?.growth['6']}
+          </p>
+          <p className="text-sm text-gray-500">
+            Growth (3 months): {topic.search_history?.growth['3']}
+          </p>
         </div>
       ))}
     </div>
