@@ -3,7 +3,7 @@
 import MoreStories from '../../components/more-stories';
 import HeroPost from '../../components/hero-post';
 import Intro from '../../components/intro';
-import { PostType } from '../../interfaces/post';
+import PostType from '../../interfaces/post';
 
 export default function ArticlesUI({ allPosts }: { allPosts: PostType[] }) {
   if (!allPosts) {
