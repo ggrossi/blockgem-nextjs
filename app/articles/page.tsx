@@ -22,15 +22,29 @@ export default async function ArticlesPage() {
     return redirect('/account');
   }
 
-  const allPosts = await getAllPosts([
+  const allPosts = (await getAllPosts([
     'title',
     'date',
     'slug',
     'author',
     'coverImage',
     'excerpt'
-  ]);
-
+  ])).map(post => ({
+    slug: post.slug,
+    title: post.title,
+    date: post.date,
+    coverImage: post.coverImage,
+    excerpt: post.excerpt,
+    ogImage: {
+      url: post.ogImage?.url || ''
+    },
+    content: post.content || '',
+    author: {
+      name: post.author?.name || '',
+      picture: post.author?.picture || ''
+    }
+  }));
+  
   return (
     <>
       <Navbar user={session?.user || null} subscription={subscription} />
