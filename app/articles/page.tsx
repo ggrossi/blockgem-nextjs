@@ -2,11 +2,11 @@ import { getSession, getSubscription } from '@/app/supabase-server';
 import { redirect } from 'next/navigation';
 import Navbar from '@/components/ui/Navbar';
 import ArticlesUI from './ArticlesUI';
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import { getAllPosts } from '../../lib/api';
 import { PostType } from '../../interfaces/post';
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const allPosts = await getAllPosts([
     'title',
     'date',
