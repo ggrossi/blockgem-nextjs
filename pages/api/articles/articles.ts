@@ -3,10 +3,11 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import { NextApiRequest, NextApiResponse } from 'next'; // import these
 
 const articlesDirectory = path.join(process.cwd(), 'md-articles');
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) { // specify the types for req and res
   const fileNames = fs.readdirSync(articlesDirectory);
   const allArticlesData = await Promise.all(
     fileNames.map(async (fileName) => {
