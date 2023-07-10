@@ -1,12 +1,11 @@
-import { getSession, getSubscription } from '@/app/supabase-server'
-import { getArticleData } from '@/lib/getArticles'
-import { useRouter } from 'next/router'
+import { getArticleData, getSortedArticlesData } from '@/lib/getArticles';
+import { useRouter } from 'next/router';
 
 export default function Article({ articleData }) {
-  const router = useRouter()
+  const router = useRouter();
 
   if (router.isFallback) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   return (
@@ -14,29 +13,29 @@ export default function Article({ articleData }) {
       <h1>{articleData.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: articleData.contentHtml }} />
     </div>
-  )
+  );
 }
 
 export async function getStaticPaths() {
-  const paths = getSortedArticlesData().map(({ id }) => {
+  const paths = (await getSortedArticlesData()).map(({ id }) => {
     return {
       params: {
         id: id
       }
-    }
-  })
+    };
+  });
 
   return {
     paths,
     fallback: true
-  }
+  };
 }
 
 export async function getStaticProps({ params }) {
-  const articleData = await getArticleData(params.id)
+  const articleData = await getArticleData(params.id);
   return {
     props: {
       articleData
     }
-  }
+  };
 }

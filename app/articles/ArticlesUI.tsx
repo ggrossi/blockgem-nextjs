@@ -1,7 +1,16 @@
-import { getSortedArticlesData } from '@/lib/getArticles'
+'use client';
+
+import { useEffect, useState } from 'react';
 
 export default function ArticlesUI() {
-  const allArticlesData = getSortedArticlesData()
+  const [allArticlesData, setAllArticlesData] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/articles/articles')
+      .then((response) => response.json())
+      .then(setAllArticlesData);
+  }, []);
+
   return (
     <div>
       <h1>All Articles</h1>
@@ -10,10 +19,10 @@ export default function ArticlesUI() {
           <li key={id}>
             <a href={`/articles/${id}`}>{title}</a>
             <br />
-            <small>{date}</small>
+            {date}
           </li>
         ))}
       </ul>
     </div>
-  )
+  );
 }
