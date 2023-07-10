@@ -27,6 +27,8 @@ export default async function getPosts() {
     // Convert the content of the Markdown file to HTML
     const contentHtml = await markdownToHtml(matterResult.content);
 
+    console.log(allPostsData);
+
     // Combine the data with the slug
     return {
       slug,

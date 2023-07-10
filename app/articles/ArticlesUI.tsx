@@ -3,7 +3,7 @@ import MoreStories from '@/components/blog/more-stories';
 import HeroPost from '@/components/blog/hero-post';
 import Intro from '@/components/blog/intro';
 import Layout from '@/components/blog/layout';
-import { Post } from '@/utils/blog/interfaces/post';
+import Post from '@/utils/blog/interfaces/post';
 
 type Props = {
   allPosts: Post[]
@@ -12,6 +12,7 @@ type Props = {
 export default function ArticlesUI({ allPosts }: Props) {
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
+  console.log(allPosts);
   return (
     <>
       <Layout>

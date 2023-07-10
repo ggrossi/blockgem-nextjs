@@ -27,6 +27,8 @@ export async function getServerSideProps() {
     };
   }
 
+  console.log({ allPosts, session, subscription });
+
   const allPosts = await getPosts();
   return {
     props: {
