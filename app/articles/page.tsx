@@ -4,20 +4,7 @@ import Navbar from '@/components/ui/Navbar';
 import ArticlesUI from './ArticlesUI';
 import getPosts from '@/utils/blog/getPosts';
 
-export default function ArticlesPage({ allPosts }) {
-  const session = getSession();
-
-  if (!session) {
-    return redirect('/signin');
-  }
-
-  const subscription = getSubscription();
-  const isPayingCustomer = !!subscription;
-
-  if (!isPayingCustomer) {
-    return redirect('/account');
-  }
-
+export default function ArticlesPage({ allPosts, session, subscription }) {
   return (
     <>
       <Navbar user={session?.user || null} subscription={subscription} />
@@ -26,11 +13,26 @@ export default function ArticlesPage({ allPosts }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
+  const session = await getSession();
+  const subscription = await getSubscription();
+  const isPayingCustomer = !!subscription;
+
+  if (!session || !isPayingCustomer) {
+    return {
+      redirect: {
+        destination: !session ? '/signin' : '/account',
+        permanent: false,
+      },
+    };
+  }
+
   const allPosts = await getPosts();
   return {
     props: {
-      allPosts
-    }
+      allPosts,
+      session,
+      subscription,
+    },
   };
 }
