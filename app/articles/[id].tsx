@@ -23,7 +23,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const articleData = await getArticleData(params.id as string);
+  // Check if params and params.id is defined before calling getArticleData
+  const articleData = params && params.id ? await getArticleData(params.id as string) : null;
   return {
     props: {
       articleData,
