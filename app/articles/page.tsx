@@ -27,9 +27,9 @@ export async function getServerSideProps() {
     };
   }
 
+  const allPosts = await getPosts();
   console.log({ allPosts, session, subscription });
 
-  const allPosts = await getPosts();
   return {
     props: {
       allPosts,
@@ -38,3 +38,4 @@ export async function getServerSideProps() {
     },
   };
 }
+
