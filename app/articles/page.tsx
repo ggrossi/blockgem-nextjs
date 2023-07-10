@@ -2,12 +2,11 @@ import { getSession, getSubscription } from '@/app/supabase-server';
 import { redirect } from 'next/navigation';
 import Navbar from '@/components/ui/Navbar';
 import ArticlesUI from './ArticlesUI';
-import { getAllPosts } from '../../lib/api';
 
 export default async function ArticlesPage() {
   const session = await getSession();
 
-  console.log('Session:', session);
+  console.log('Session:', session); // Add this line
 
   if (!session) {
     return redirect('/signin');
@@ -16,39 +15,16 @@ export default async function ArticlesPage() {
   const subscription = await getSubscription();
   const isPayingCustomer = !!subscription;
 
-  console.log('Subscription:', subscription);
+  console.log('Subscription:', subscription); // Add this line
 
   if (!isPayingCustomer) {
     return redirect('/account');
   }
 
-  const allPosts = (await getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt'
-  ])).map(post => ({
-    slug: post.slug,
-    title: post.title,
-    date: post.date,
-    coverImage: post.coverImage,
-    excerpt: post.excerpt,
-    ogImage: {
-      url: typeof post.ogImage === 'object' ? (post.ogImage as { url: string })?.url : ''
-    },
-    content: post.content || '',
-    author: {
-      name: post.author || '',
-      picture: '' // adjust this if you have author pictures
-    }
-  }));  
-  
   return (
     <>
       <Navbar user={session?.user || null} subscription={subscription} />
-      <ArticlesUI allPosts={allPosts} />
+      <ArticlesUI />
     </>
   );
 }
