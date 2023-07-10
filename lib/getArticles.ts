@@ -6,10 +6,10 @@ import html from 'remark-html'
 
 const articlesDirectory = path.join(process.cwd(), 'md-articles')
 
-export function getSortedArticlesData() {
+export async function getSortedArticlesData() {
   // Get file names under /md-articles
   const fileNames = fs.readdirSync(articlesDirectory)
-  const allArticlesData = fileNames.map(fileName => {
+  const allArticlesData = fileNames.map(async fileName => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '')
 
@@ -34,7 +34,7 @@ export function getSortedArticlesData() {
     }
   })
   // Sort posts by date
-  return allArticlesData.sort((a, b) => {
+  return (await Promise.all(allArticlesData)).sort((a, b) => {
     if (a.date < b.date) {
       return 1
     } else {
