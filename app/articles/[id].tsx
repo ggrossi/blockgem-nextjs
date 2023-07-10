@@ -1,49 +1,32 @@
-import { getArticleData, getSortedArticlesData } from '@/lib/getArticles';
-import { useRouter } from 'next/router';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import { getSortedArticlesData, getArticleData } from '@/lib/getArticles';
 
-export default function Article({ articleData }) {
-  const router = useRouter();
-
-  if (router.isFallback) {
-    return <div>Loading...</div>;
-  }
-
+export default function Article({ articleData }: { articleData: { [key: string]: any } }) {
   return (
-    <div>
+    <article>
       <h1>{articleData.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: articleData.contentHtml }} />
-    </div>
+    </article>
   );
 }
 
-export async function getStaticPaths() {
-  const allArticlesData = await getSortedArticlesData();
-  console.log(allArticlesData); // Add this line
-  const paths = allArticlesData.map(({ id }) => {
-    return {
-      params: {
-        id: id
-      }
-    };
-  });
-
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = (await getSortedArticlesData()).map(({ id }) => ({
+    params: {
+      id,
+    },
+  }));
   return {
     paths,
-    fallback: true
+    fallback: false,
   };
-}
+};
 
-export async function getStaticProps({ params }) {
-  const articleData = await getArticleData(params.id);
-  console.log(articleData); // Add this line
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const articleData = await getArticleData(params.id as string);
   return {
     props: {
-      articleData
-    }
+      articleData,
+    },
   };
-}
-ops: {
-      articleData
-    }
-  }
-}
+};
