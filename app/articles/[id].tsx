@@ -17,7 +17,9 @@ export default function Article({ articleData }) {
 }
 
 export async function getStaticPaths() {
-  const paths = (await getSortedArticlesData()).map(({ id }) => {
+  const allArticlesData = await getSortedArticlesData();
+  console.log(allArticlesData); // Add this line
+  const paths = allArticlesData.map(({ id }) => {
     return {
       params: {
         id: id
@@ -33,9 +35,15 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const articleData = await getArticleData(params.id);
+  console.log(articleData); // Add this line
   return {
     props: {
       articleData
     }
   };
+}
+ops: {
+      articleData
+    }
+  }
 }
