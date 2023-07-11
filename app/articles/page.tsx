@@ -4,7 +4,7 @@ import Navbar from '@/components/ui/Navbar';
 import ArticlesUI from './ArticlesUI';
 import { GetServerSideProps } from 'next';
 
-export default function ArticlesPage({ session, subscription }) {
+export default function ArticlePage({ session, subscription }) {
   if (!session) {
     return redirect('/signin');
   }
