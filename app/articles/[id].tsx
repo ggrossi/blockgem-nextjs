@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { getSortedArticlesData, getArticleData } from '@/lib/getArticles';
 
 export default function Article({ articleData }: { articleData: { [key: string]: any } }) {
-  // If articleData is null, return a message
   if (!articleData) {
     return <div>No article data</div>;
   }
@@ -28,7 +27,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  // Check if params and params.id is defined before calling getArticleData
   const articleData = params && params.id ? await getArticleData(params.id as string) : null;
   return {
     props: {

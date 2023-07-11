@@ -7,8 +7,8 @@ export default function ArticlesUI() {
 
   useEffect(() => {
     fetch('/api/articles/articles')
-      .then(response => response.json())
-      .then(data => setAllArticlesData(data));
+      .then((response) => response.json())
+      .then((data) => setAllArticlesData(data));
   }, []);
 
   return (
