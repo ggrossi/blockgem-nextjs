@@ -2,16 +2,13 @@ import { getSession, getSubscription } from '@/app/supabase-server';
 import { redirect } from 'next/navigation';
 import Navbar from '@/components/ui/Navbar';
 import ArticlesUI from './ArticlesUI';
-import { GetServerSidePropsContext } from 'next';
+import { GetServerSideProps } from 'next';
 
-export default async function ArticlesPage() {
-  const session = await getSession();
-
+export default function ArticlesPage({ session, subscription }) {
   if (!session) {
     return redirect('/signin');
   }
 
-  const subscription = await getSubscription(session?.user?.id);
   const isPayingCustomer = !!subscription;
 
   if (!isPayingCustomer) {
@@ -26,7 +23,7 @@ export default async function ArticlesPage() {
   );
 }
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context.req);
   const subscription = await getSubscription(session?.user?.id);
 
@@ -36,4 +33,4 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
       subscription
     }
   };
-}
+};
