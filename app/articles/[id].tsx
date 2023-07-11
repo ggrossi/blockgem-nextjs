@@ -1,7 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { getSortedArticlesData, getArticleData } from '@/lib/getArticles';
 
-export default function Article({ articleData }: { articleData: { [key: string]: any } }) {
+export default function Article({
+  articleData
+}: {
+  articleData: { [key: string]: any };
+}) {
   if (!articleData) {
     return <div>No article data</div>;
   }
@@ -17,20 +21,21 @@ export default function Article({ articleData }: { articleData: { [key: string]:
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = (await getSortedArticlesData()).map(({ id }) => ({
     params: {
-      id,
-    },
+      id
+    }
   }));
   return {
     paths,
-    fallback: false,
+    fallback: false
   };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const articleData = params && params.id ? await getArticleData(params.id as string) : null;
+  const articleData =
+    params && params.id ? await getArticleData(params.id as string) : null;
   return {
     props: {
-      articleData,
-    },
+      articleData
+    }
   };
 };

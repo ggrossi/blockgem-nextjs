@@ -13,13 +13,15 @@ export async function getSortedArticlesData() {
     const fullPath = path.join(articlesDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const matterResult = matter(fileContents);
-    const processedContent = await remark().use(html).process(matterResult.content);
+    const processedContent = await remark()
+      .use(html)
+      .process(matterResult.content);
     const contentHtml = processedContent.toString();
 
     return {
       id,
       contentHtml,
-      ...matterResult.data,
+      ...matterResult.data
     };
   });
 
@@ -36,12 +38,14 @@ export async function getArticleData(id: string) {
   const fullPath = path.join(articlesDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const matterResult = matter(fileContents);
-  const processedContent = await remark().use(html).process(matterResult.content);
+  const processedContent = await remark()
+    .use(html)
+    .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
   return {
     id,
     contentHtml,
-    ...matterResult.data,
+    ...matterResult.data
   };
 }

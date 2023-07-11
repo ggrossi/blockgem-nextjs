@@ -7,7 +7,10 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 const articlesDirectory = path.join(process.cwd(), 'md-articles');
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const fileNames = fs.readdirSync(articlesDirectory);
   const allArticlesData = await Promise.all(
     fileNames.map(async (fileName) => {
@@ -15,13 +18,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const fullPath = path.join(articlesDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const matterResult = matter(fileContents);
-      const processedContent = await remark().use(html).process(matterResult.content);
+      const processedContent = await remark()
+        .use(html)
+        .process(matterResult.content);
       const contentHtml = processedContent.toString();
 
       return {
         id,
         contentHtml,
-        ...matterResult.data,
+        ...matterResult.data
       };
     })
   );

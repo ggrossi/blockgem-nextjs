@@ -6,7 +6,7 @@ import { GetServerSidePropsContext } from 'next';
 
 export default async function ArticlesPage() {
   const session = await getSession();
-  
+
   if (!session) {
     return redirect('/signin');
   }
@@ -33,7 +33,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   return {
     props: {
       session,
-      subscription,
-    },
+      subscription
+    }
   };
 }
