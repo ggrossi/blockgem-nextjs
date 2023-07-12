@@ -1,6 +1,7 @@
 import Pricing from '@/components/Pricing';
 import Navbar from '@/components/ui/Navbar';
 import Hero from '@/components/Hero';
+import SalesCopy from '@/components/ui/SalesCopy';
 import {
   getSession,
   getSubscription,
@@ -18,6 +19,7 @@ export default async function PricingPage() {
     <>
       <Navbar user={session?.user || null} subscription={subscription} />
       <Hero />
+      <SalesCopy />
       <Pricing
         session={session}
         user={session?.user}

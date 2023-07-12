@@ -11,9 +11,9 @@ export default function AuthUI() {
     <div className="flex flex-col space-y-4">
       <Auth
         supabaseClient={supabase}
-        providers={['github']}
+        providers={false}
         redirectTo={getURL()}
-        magicLink={true}
+        magicLink={false}
         appearance={{
           theme: ThemeSupa,
           variables: {
