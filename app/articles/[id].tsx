@@ -19,11 +19,16 @@ export default function Article({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = (await getSortedArticlesData()).map(({ id }) => ({
-    params: {
-      id
-    }
-  }));
+  let paths = [];
+  try {
+    paths = (await getSortedArticlesData()).map(({ id }) => ({
+      params: {
+        id
+      }
+    }));
+  } catch (err) {
+    console.error('Error getting article data:', err);
+  }
   return {
     paths,
     fallback: false
@@ -31,8 +36,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const articleData =
-    params && params.id ? await getArticleData(params.id as string) : null;
+  let articleData = null;
+  try {
+    if (params && params.id) {
+      articleData = await getArticleData(params.id as string);
+    }
+  } catch (err) {
+    console.error('Error getting article data:', err);
+  }
+  if (!articleData) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
       articleData

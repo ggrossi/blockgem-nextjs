@@ -36,7 +36,13 @@ export async function getSortedArticlesData() {
 
 export async function getArticleData(id: string) {
   const fullPath = path.join(articlesDirectory, `${id}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  let fileContents;
+  try {
+    fileContents = fs.readFileSync(fullPath, 'utf8');
+  } catch (err) {
+    console.error(`Error reading file ${fullPath}:`, err);
+    return null;
+  }
   const matterResult = matter(fileContents);
   const processedContent = await remark()
     .use(html)

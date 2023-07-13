@@ -51,23 +51,29 @@ export default function GemsUI() {
   }
 
   return (
-    <div className="grid grid-cols-3 gap-4">
-      {Array.isArray(topics) &&
-        topics.map((topic: Topic, index: number) => (
-          <div key={index} className="p-4 border rounded-md shadow-lg">
-            <h2 className="text-xl font-bold mb-2">{topic.keyword}</h2>
-            <p className="text-gray-700 mb-2">{topic.description}</p>
-            <p className="text-sm text-gray-500 mb-1">
-              Absolute Volume: {topic.absolute_volume}
-            </p>
-            <p className="text-sm text-gray-500">
-              Growth (6 months): {topic.search_history?.growth['6']}%
-            </p>
-            <p className="text-sm text-gray-500">
-              Growth (3 months): {topic.search_history?.growth['3']}%
-            </p>
+    <section className="bg-darken">
+      <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8">
+        <div className="sm:flex sm:flex-col sm:align-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {Array.isArray(topics) &&
+              topics.map((topic: Topic, index: number) => (
+                <div key={index} className="p-4 border rounded-md shadow-lg border-pink-500 border-opacity-50 rounded-lg shadow-sm bg-zinc-900">
+                  <h2 className="text-xl font-bold mb-2">{topic.keyword}</h2>
+                  <p className="text-zinc-200 mb-2">{topic.description}</p>
+                  <p className="text-sm text-zinc-200 mb-1">
+                    <b>Search Volume:</b> {topic.absolute_volume}
+                  </p>
+                  <p className="text-sm text-zinc-200">
+                    <b>Growth (6 months):</b> {topic.search_history?.growth['6']}%
+                  </p>
+                  <p className="text-sm text-zinc-200">
+                    <b>Growth (3 months):</b> {topic.search_history?.growth['3']}%
+                  </p>
+                </div>
+              ))}
           </div>
-        ))}
-    </div>
+        </div>
+      </div>
+    </section>
   );
 }
