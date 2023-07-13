@@ -5,12 +5,13 @@ import { Analytics } from '@vercel/analytics/react';
 import 'styles/main.css';
 
 const meta = {
-  title: 'Next.js Subscription Starter',
-  description: 'Brought to you by Vercel, Stripe, and Supabase.',
+  title: 'Blockgem: Unearth Crypto Investment Trends With Huge Upside',
+  description:
+    'Dive into our weekly trends insights and access our comprehensive Signals database to spot emerging crypto projects. Begin your journey to unearth potential crypto gems with our risk-free trial.',
   cardImage: '/og.png',
   robots: 'follow, index',
   favicon: '/favicon.ico',
-  url: 'https://subscription-starter.vercel.app',
+  url: 'https://blockgem.co',
   type: 'website'
 };
 

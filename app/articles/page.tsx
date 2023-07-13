@@ -10,7 +10,10 @@ interface ArticlePageProps {
   subscription: any; // Replace with actual type if known
 }
 
-export default function ArticlePage({ session, subscription }: ArticlePageProps) {
+export default function ArticlePage({
+  session,
+  subscription
+}: ArticlePageProps) {
   return (
     <>
       <Navbar user={session?.user || null} subscription={subscription} />
@@ -19,7 +22,10 @@ export default function ArticlePage({ session, subscription }: ArticlePageProps)
   );
 }
 
-export const getServerSideProps: GetServerSideProps<ArticlePageProps, ParsedUrlQuery> = async (context) => {
+export const getServerSideProps: GetServerSideProps<
+  ArticlePageProps,
+  ParsedUrlQuery
+> = async (context) => {
   const session = await getSession(context.req);
   const subscription = await getSubscription(session?.user?.id);
 
@@ -27,9 +33,9 @@ export const getServerSideProps: GetServerSideProps<ArticlePageProps, ParsedUrlQ
     return {
       redirect: {
         destination: '/signin',
-        permanent: false,
-      },
-    }
+        permanent: false
+      }
+    };
   }
 
   const isPayingCustomer = !!subscription;
@@ -38,9 +44,9 @@ export const getServerSideProps: GetServerSideProps<ArticlePageProps, ParsedUrlQ
     return {
       redirect: {
         destination: '/account',
-        permanent: false,
-      },
-    }
+        permanent: false
+      }
+    };
   }
 
   return {

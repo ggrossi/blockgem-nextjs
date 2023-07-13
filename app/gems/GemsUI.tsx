@@ -57,17 +57,22 @@ export default function GemsUI() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {Array.isArray(topics) &&
               topics.map((topic: Topic, index: number) => (
-                <div key={index} className="p-4 border rounded-md shadow-lg border-pink-500 border-opacity-50 rounded-lg shadow-sm bg-zinc-900">
+                <div
+                  key={index}
+                  className="p-4 border rounded-md shadow-lg border-pink-500 border-opacity-50 rounded-lg shadow-sm bg-zinc-900"
+                >
                   <h2 className="text-xl font-bold mb-2">{topic.keyword}</h2>
                   <p className="text-zinc-200 mb-2">{topic.description}</p>
                   <p className="text-sm text-zinc-200 mb-1">
                     <b>Search Volume:</b> {topic.absolute_volume}
                   </p>
                   <p className="text-sm text-zinc-200">
-                    <b>Growth (6 months):</b> {topic.search_history?.growth['6']}%
+                    <b>Growth (6 months):</b>{' '}
+                    {topic.search_history?.growth['6']}%
                   </p>
                   <p className="text-sm text-zinc-200">
-                    <b>Growth (3 months):</b> {topic.search_history?.growth['3']}%
+                    <b>Growth (3 months):</b>{' '}
+                    {topic.search_history?.growth['3']}%
                   </p>
                 </div>
               ))}

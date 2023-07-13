@@ -19,7 +19,7 @@ export default function Article({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  let paths = [];
+  let paths = any[];
   try {
     paths = (await getSortedArticlesData()).map(({ id }) => ({
       params: {
