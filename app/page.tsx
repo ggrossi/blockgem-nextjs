@@ -2,6 +2,7 @@ import Pricing from '@/components/Pricing';
 import Navbar from '@/components/ui/Navbar';
 import Hero from '@/components/Hero';
 import SalesCopy from '@/components/ui/SalesCopy';
+import SalesCopyBottom from '@/components/ui/SalesCopyBottom';
 import {
   getSession,
   getSubscription,
@@ -26,6 +27,7 @@ export default async function PricingPage() {
         products={products}
         subscription={subscription}
       />
+      <SalesCopyBottom />
     </>
   );
 }

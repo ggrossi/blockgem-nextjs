@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const SalesCopy = () => {
   return (
@@ -58,6 +59,12 @@ const SalesCopy = () => {
             detector, highlighting businesses and tokens that are gaining
             traction on the web and are ready to shine.
           </p>
+          <Link
+            href="/signin#auth-sign-up"
+            className="max-w-2xl m-auto mt-5 text-xl px-4 py-2 font-bold text-white bg-pink-500 rounded-lg hover:bg-pink-700 focus:outline-none focus:shadow-outline"
+          >
+            <button>Get Started for FREE →</button>
+          </Link>
         </div>
         <div className="sm:flex sm:flex-col sm:align-center">
           <h2 className="text-4xl font-extrabold text-transparent bg-clip-text sm:text-center sm:text-6xl bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 py-8">

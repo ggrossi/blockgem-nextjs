@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const SpecialOffer = () => {
   return (
@@ -26,6 +27,12 @@ const SpecialOffer = () => {
           <p className="max-w-4xl m-auto mt-5 text-xl text-white sm:text-4xl font-extrabold sm:text-center pb-8">
             Your Coupon Code: <span className="text-rose-400">GEM20</span>
           </p>
+          <Link
+            href="/signin#auth-sign-up"
+            className="max-w-2xl m-auto mt-4 mb-8 text-xl px-4 py-2 font-bold text-white bg-pink-500 rounded-lg hover:bg-pink-700 focus:outline-none focus:shadow-outline"
+          >
+            <button>Get Started for FREE →</button>
+          </Link>
           <p className="max-w-2xl m-auto mt-5 text-xl text-white sm:text-2xl text-zinc-200 pb-4">
             With Blockgem Premium, you'll gain access to our comprehensive
             Signals database and receive in-depth weekly insights into
@@ -43,7 +50,7 @@ const SpecialOffer = () => {
             See you soon,
           </p>
           <p className="max-w-2xl m-auto mt-5 text-xl text-white sm:text-2xl text-zinc-200 pb-4">
-            <span className="text-rose-400 bold">Team Blockgem.</span>
+            <span className="text-rose-400 font-bold">Team Blockgem.</span>
           </p>
         </div>
       </div>

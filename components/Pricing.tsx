@@ -143,13 +143,17 @@ export default function Pricing({
                         type="button"
                         disabled={false}
                         loading={priceIdLoading === price.id}
-                        onClick={() => handleCheckout(price)}
+                        onClick={() =>
+                          user ? handleCheckout(price) : router.push('/account')
+                        }
                         className="block w-full py-2 mt-12 text-sm font-semibold text-center text-white rounded-md hover:bg-zinc-900 "
                       >
-                        {products[0].name ===
-                        subscription?.prices?.products?.name
-                          ? 'Manage'
-                          : 'Subscribe'}
+                        {user
+                          ? products[0].name ===
+                            subscription?.prices?.products?.name
+                            ? 'Manage'
+                            : 'Subscribe'
+                          : 'GET STARTED'}
                       </Button>
                     </div>
                   </div>
@@ -247,21 +251,24 @@ export default function Pricing({
                   <Button
                     variant="slim"
                     type="button"
-                    disabled={!session}
+                    disabled={false}
                     loading={priceIdLoading === price.id}
-                    onClick={() => handleCheckout(price)}
+                    onClick={() =>
+                      user ? handleCheckout(price) : router.push('/account')
+                    }
                     className="block w-full py-2 mt-8 text-sm font-semibold text-center text-white rounded-md hover:bg-zinc-900"
                   >
-                    {product.name === subscription?.prices?.products?.name
-                      ? 'Manage'
-                      : 'Subscribe'}
+                    {user
+                      ? product.name === subscription?.prices?.products?.name
+                        ? 'Manage'
+                        : 'Subscribe'
+                      : 'GET STARTED'}
                   </Button>
                 </div>
               </div>
             );
           })}
         </div>
-        <LogoCloud />
       </div>
     </section>
   );
