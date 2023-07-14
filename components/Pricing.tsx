@@ -164,14 +164,20 @@ export default function Pricing({
 
   return (
     <section className="bg-darken">
-      <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8">
+      <div className="max-w-6xl px-4 pb-8 mx-auto sm:pb-24 sm:px-6 lg:px-8">
         <div className="sm:flex sm:flex-col sm:align-center">
-          <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
-            Pricing Plans
-          </h1>
-          <p className="max-w-2xl m-auto mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl">
-            Start building for free, then add a site plan to go live. Account
-            plans unlock additional features.
+          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text sm:text-center sm:text-6xl bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 pb-8">
+            Risk-Free 14-Day Trial
+          </h2>
+          <p className="max-w-4xl m-auto mt-5 text-xl text-white sm:text-4xl font-extrabold sm:text-center pb-8">
+            Discover{' '}
+            <span className="text-rose-400">the value of Blockgem</span> without
+            any risk.
+          </p>
+          <p className="max-w-2xl m-auto mt-5 text-xl text-white sm:text-2xl text-zinc-200 pb-4">
+            We're so confident you'll love Blockgem that we offer a risk-free
+            14-day trial. If you're not star-struck, just access your customer
+            dashboard and we'll process a full refund – no questions asked.
           </p>
           <div className="relative self-center mt-6 bg-zinc-900 rounded-lg p-0.5 flex sm:mt-8 border border-zinc-800">
             {intervals.includes('month') && (
