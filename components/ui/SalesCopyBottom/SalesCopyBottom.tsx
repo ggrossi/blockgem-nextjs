@@ -11,7 +11,7 @@ const SalesCopyBottom = () => {
             Blockgem Premium Membership
           </h2>
           <p className="max-w-4xl m-auto mt-5 text-xl text-white sm:text-4xl font-extrabold sm:text-center pb-8">
-            Start digging for your {' '}
+            Start digging for your{' '}
             <span className="text-rose-400">crypto gems</span>.{' '}
           </p>
           <p className="max-w-2xl m-auto mt-5 text-xl text-white sm:text-2xl text-zinc-200 pb-4">
@@ -35,7 +35,8 @@ const SalesCopyBottom = () => {
             in the future.
           </p>
           <p className="max-w-2xl m-auto mt-5 text-xl text-white sm:text-2xl text-zinc-200 pb-4">
-          Our members have already seen significant returns on investments like Chainlink (+150%), Cardano (+200%), and Ripple (+100%).
+            Our members have already seen significant returns on investments
+            like Chainlink (+150%), Cardano (+200%), and Ripple (+100%).
           </p>
           <p className="max-w-2xl m-auto mt-5 text-xl text-white sm:text-2xl text-zinc-200 pb-4">
             Are you ready to join them and start unearthing your own crypto
