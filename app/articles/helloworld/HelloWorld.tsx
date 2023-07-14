@@ -10,10 +10,8 @@ export default function HelloWorld() {
           </h2>
           <p className="max-w-4xl m-auto mt-5 text-xl text-white sm:text-4xl font-extrabold sm:text-center pb-8">
             The list of{' '}
-            <span className="text-rose-400">
-              deep-dive insights
-            </span>{' '}
-            goes down below.
+            <span className="text-rose-400">deep-dive insights</span> goes down
+            below.
           </p>
         </div>
       </div>

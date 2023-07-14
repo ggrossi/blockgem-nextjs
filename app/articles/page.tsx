@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation';
 import Navbar from '@/components/ui/Navbar';
 import ArticlesUI from './ArticlesUI';
 
-export default async function GemsPage() {
+export default async function ArticlesPage() {
   const session = await getSession();
 
   console.log('Session:', session); // Add this line
