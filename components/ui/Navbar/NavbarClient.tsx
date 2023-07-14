@@ -95,7 +95,7 @@ export default function NavbarClient({
               </div>
             </div>
             <div className="flex justify-end flex-1 space-x-8">
-              {user ? <></> : <Link href="/signin#auth-sign-up">Login</Link>}
+              {user ? <></> : <Link href="/signin">Login</Link>}
               {user ? (
                 <SignOutButton />
               ) : (
