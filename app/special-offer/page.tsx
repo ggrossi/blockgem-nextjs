@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation';
 import Navbar from '@/components/ui/Navbar';
 import SpecialOffer from './SpecialOffer';
 
-export default async function ArticlesPage() {
+export default async function OfferPage() {
   const session = await getSession();
 
   console.log('Session:', session); // Add this line

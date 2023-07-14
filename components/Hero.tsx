@@ -1,10 +1,12 @@
 'use client';
 
-import Image from 'next/image';
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation'; // import useRouter
+import Image from 'next/image';
 
 const Hero = () => {
   const [email, setEmail] = useState('');
+  const router = useRouter(); // initialize useRouter
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -23,7 +25,13 @@ const Hero = () => {
     });
     const result = await res.json();
     console.log('Response:', result);
+    
     // handle success and error responses here
+    if (res.ok) {
+      router.push('/special-offer'); // redirect to /special-offer if successful
+    } else {
+      alert('Subscription failed. Please try again.'); // show alert message if failed
+    }
   };
 
   return (
