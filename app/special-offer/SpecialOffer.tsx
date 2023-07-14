@@ -5,6 +5,9 @@ const SpecialOffer = () => {
   return (
     <section className="bg-darken">
       <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8">
+        <span className="flex justify-center text-8xl font-extrabold text-white sm:text-center sm:text-8xl my-8">
+          <Image src="/Logo.gif" alt="Gem Box" width={154} height={100} />
+        </span>
         <h2 className="text-4xl font-extrabold text-transparent bg-clip-text sm:text-center sm:text-6xl bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 py-8">
           We're thrilled to have you on board!
         </h2>
