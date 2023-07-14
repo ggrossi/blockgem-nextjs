@@ -25,7 +25,7 @@ const Hero = () => {
     });
     const result = await res.json();
     console.log('Response:', result);
-    
+
     // handle success and error responses here
     if (res.ok) {
       router.push('/special-offer'); // redirect to /special-offer if successful
@@ -39,7 +39,7 @@ const Hero = () => {
       <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8">
         <div className="sm:flex sm:flex-col sm:align-center">
           <span className="flex justify-center text-8xl font-extrabold text-white sm:text-center sm:text-8xl my-8">
-            <Image src="/Logo.gif" alt="Gem Box" width={154} height={100} />
+            <Image src="/Logo.svg" alt="Gem Box" width={154} height={100} />
           </span>
           <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
             Discover The Next Gem!
