@@ -15,6 +15,7 @@ module.exports = {
       },
       colors: {
         darken: '#0c0c0d',
+        lighten: '#f5f5f5',
         blockteal: '#00dc82',
         blockcyan: '#34cdfe',
         blockblue: '0047e1'
