@@ -98,7 +98,12 @@ export default function NavbarClient({
               {user ? (
                 <SignOutButton />
               ) : (
-                <Link className="bg-pink-500 rounded-lg hover:bg-pink-700 focus:outline-none focus:shadow-outline text-white py-2 px-4 font-bold" href="/signin#auth-sign-up">GET STARTED</Link>
+                <Link
+                  className="bg-pink-500 rounded-lg hover:bg-pink-700 focus:outline-none focus:shadow-outline text-white py-2 px-4 font-bold"
+                  href="/signin#auth-sign-up"
+                >
+                  GET STARTED
+                </Link>
               )}
             </div>
           </div>
