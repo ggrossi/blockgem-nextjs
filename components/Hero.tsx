@@ -38,10 +38,10 @@ const Hero = () => {
     <section className="bg-darken">
       <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8">
         <div className="sm:flex sm:flex-col sm:align-center">
-          <span className="flex justify-center text-8xl font-extrabold text-white sm:text-center sm:text-8xl my-8">
+          <span className="flex justify-center text-8xl font-extrabold text-lighten sm:text-center sm:text-8xl my-8">
             <Image src="/Logo.svg" alt="Gem Box" width={150} height={150} />
           </span>
-          <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
+          <h1 className="text-4xl font-extrabold text-lighten sm:text-center sm:text-6xl">
             Discover The Next Gem!
           </h1>
           <p className="max-w-2xl m-auto mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl">
@@ -60,7 +60,7 @@ const Hero = () => {
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 font-bold text-white bg-pink-500 rounded-lg hover:bg-pink-700 focus:outline-none focus:shadow-outline"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 font-bold text-lighten bg-pink-500 rounded-lg hover:bg-pink-700 focus:outline-none focus:shadow-outline"
                 >
                   GET STARTED!
                 </button>

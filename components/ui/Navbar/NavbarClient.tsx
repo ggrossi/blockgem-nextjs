@@ -56,7 +56,7 @@ export default function NavbarClient({
               <div
                 className={`${
                   isOpen ? 'block' : 'hidden'
-                } absolute top-full left-0 z-20 mt-2 space-y-2 text-white bg-zinc-900 border border-pink-500 rounded-lg shadow-lg lg:static lg:bg-transparent lg:border-0 lg:shadow-none lg:flex lg:items-center lg:space-y-0 lg:mt-0 lg:ml-6`}
+                } absolute top-full left-0 z-20 mt-2 space-y-2 text-lighten bg-zinc-900 border border-pink-500 rounded-lg shadow-lg lg:static lg:bg-transparent lg:border-0 lg:shadow-none lg:flex lg:items-center lg:space-y-0 lg:mt-0 lg:ml-6`}
               >
                 <Link href="/" className="block px-4 py-2 lg:px-2 lg:py-0">
                   Home
@@ -95,11 +95,10 @@ export default function NavbarClient({
               </div>
             </div>
             <div className="flex justify-end flex-1 space-x-8">
-              {user ? <></> : <Link href="/signin">Login</Link>}
               {user ? (
                 <SignOutButton />
               ) : (
-                <Link href="/signin#auth-sign-up">Sign Up</Link>
+                <Link className="bg-pink-500 rounded-lg hover:bg-pink-700 focus:outline-none focus:shadow-outline text-white py-2 px-4 font-bold" href="/signin#auth-sign-up">GET STARTED</Link>
               )}
             </div>
           </div>
