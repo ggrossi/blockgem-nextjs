@@ -167,7 +167,7 @@ export default function Pricing({
     );
 
   return (
-    <section className="bg-darken">
+    <section className="bg-darken" id="pricing">
       <div className="max-w-6xl px-4 pb-8 mx-auto sm:pb-24 sm:px-6 lg:px-8">
         <div className="sm:flex sm:flex-col sm:align-center">
           <h2 className="text-4xl font-extrabold text-transparent bg-clip-text sm:text-center sm:text-6xl bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 pb-8">
@@ -227,7 +227,7 @@ export default function Pricing({
               <div
                 key={product.id}
                 className={cn(
-                  'rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900',
+                  'rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900 border border-pink-500',
                   {
                     'border border-pink-500': subscription
                       ? product.name === subscription?.prices?.products?.name
