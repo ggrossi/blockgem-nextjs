@@ -38,7 +38,7 @@ const Hero = () => {
     <section className="bg-darken">
       <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8">
         <div className="sm:flex sm:flex-col sm:align-center">
-          <span className="flex justify-center text-8xl font-extrabold text-lighten sm:text-center sm:text-8xl my-8">
+          <span className="flex justify-center text-8xl font-extrabold text-lighten sm:text-center sm:text-8xl pt-16 my-8">
             <Image src="/Logo.svg" alt="Gem Box" width={150} height={150} />
           </span>
           <h1 className="text-4xl font-extrabold text-lighten sm:text-center sm:text-6xl">
