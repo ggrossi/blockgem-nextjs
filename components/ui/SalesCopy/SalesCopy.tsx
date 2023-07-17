@@ -6,6 +6,14 @@ const SalesCopy = () => {
   return (
     <section className="bg-darken">
       <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8">
+        <div>
+          <p className="mt-24 text-xs uppercase text-zinc-400 text-center font-bold tracking-[0.3em]">
+            Brought to you by former members of
+          </p>
+          <div className="flex justify-center items-center mb-24 mt-8">
+            <Image src="/binance-logo.svg" alt="binance logo" width={250} height={50} />
+          </div>
+        </div>
         <div className="sm:flex sm:flex-col sm:align-center">
           <h2 className="text-4xl font-extrabold text-transparent bg-clip-text sm:text-center sm:text-6xl bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 pb-8">
             Welcome to the Future of Crypto Investing
@@ -25,7 +33,7 @@ const SalesCopy = () => {
             But what if you had a trusted guide to help you uncover the most
             promising crypto projects before they explode?
           </p>
-          <p className="max-w-2xl m-auto mt-5 text-xl text-lighten sm:text-2xl text-zinc-200 pb-4">
+          <p className="max-w-2xl m-auto mt-5 text-xl text-lighten sm:text-2xl text-zinc-200 pb-2">
             Enter Blockgem, your co-pilot on this exciting journey. We're not
             just about covering news - we're about unearthing the trends that
             are about to shine.
