@@ -36,7 +36,7 @@ const SalesCopyBottom = () => {
           </p>
           <p className="max-w-2xl m-auto mt-5 text-xl text-lighten sm:text-2xl text-zinc-200 pb-4">
             Our members have already seen significant returns on investments
-            like Chainlink (+150%), Cardano (+200%), and Ripple (+100%).
+            like Chainlink (+150%) and Ripple (+100%).
           </p>
           <p className="max-w-2xl m-auto mt-5 text-xl text-lighten sm:text-2xl text-zinc-200 pb-4">
             Are you ready to join them and start unearthing your own crypto

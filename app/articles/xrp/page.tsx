@@ -1,15 +1,17 @@
 import { getSession, getSubscription } from '@/app/supabase-server';
 import { redirect } from 'next/navigation';
 import Navbar from '@/components/ui/Navbar';
-import HelloWorld from './HelloWorld';
+import XRPReport from './XRPReport';
 
 const meta = {
-  title: 'Blog Post Meta',
-  description: 'Blog Post Description',
+  title:
+    'XRP (Ripple) Deep Dive: A Comprehensive Analysis of Its Potential and Risks',
+  description:
+    'Explore our in-depth analysis of XRP (Ripple), a unique digital asset with significant potential. Understand its role in the growing cross-border payments and digital asset management markets, and learn about the risks and opportunities it presents.',
   cardImage: '/og.png',
   robots: 'follow, index',
   favicon: '/favicon.ico',
-  url: 'https://blockgem.co/articles/helloworld',
+  url: 'https://blockgem.co/articles/xrp',
   type: 'website'
 };
 
@@ -59,7 +61,7 @@ export default async function GemsPage() {
   return (
     <>
       <Navbar user={session?.user || null} subscription={subscription} />
-      <HelloWorld />
+      <XRPReport />
     </>
   );
 }

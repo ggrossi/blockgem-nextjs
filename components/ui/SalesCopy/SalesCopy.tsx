@@ -31,6 +31,9 @@ const SalesCopy = () => {
             are about to shine.
           </p>
         </div>
+        <div className="flex justify-center items-center mt-8">
+          <Image src="/insights.gif" alt="Insights" width={640} height={480} />
+        </div>
         <div className="sm:flex sm:flex-col sm:align-center">
           <h2 className="text-4xl font-extrabold text-transparent bg-clip-text sm:text-center sm:text-6xl bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 py-8">
             What We Offer

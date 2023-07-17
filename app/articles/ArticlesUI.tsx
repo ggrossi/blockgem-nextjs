@@ -17,9 +17,16 @@ export default function ArticlesUI() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-4 border rounded-md shadow-lg border-pink-500 border-opacity-50 rounded-lg shadow-sm bg-zinc-900">
-              <Link href="/articles/helloworld">
-                <h2 className="text-xl font-bold mb-2">Hello World</h2>
-                <p className="text-zinc-200 mb-2">Post Description</p>
+              <Link href="/articles/xrp">
+                <h2 className="text-xl font-bold mb-2">
+                  Ripple (XRP): A Token Poised for a Breakthrough
+                </h2>
+                <p className="text-zinc-200 mb-2">
+                  Want to know which tokens are at the forefront of massive
+                  industries like cross-border payments, financial services, and
+                  digital asset management? Look no further than Ripple's XRP.
+                </p>
+                <p className="text-zinc-200 mb-2">07/12/2023</p>
               </Link>
             </div>
           </div>

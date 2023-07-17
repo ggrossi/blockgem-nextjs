@@ -81,7 +81,7 @@ export default function NavbarClient({
                     href="/articles"
                     className="block px-4 py-2 lg:px-2 lg:py-0"
                   >
-                    Articles
+                    Insights
                   </Link>
                 )}
                 {isPayingCustomer && (
