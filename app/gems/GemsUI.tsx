@@ -54,6 +54,14 @@ export default function GemsUI() {
     <section className="bg-darken">
       <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8">
         <div className="sm:flex sm:flex-col sm:align-center">
+          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text sm:text-center sm:text-6xl bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 pb-8">
+            Unearth Hidden Crypto Gems
+          </h2>
+          <p className="max-w-4xl m-auto mt-5 text-xl text-lighten sm:text-4xl font-extrabold sm:text-center mb-24">
+            Discover potential {' '}
+            <span className="text-rose-400">crypto breakthrough </span>
+            with our comprehensive Signals database.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {Array.isArray(topics) &&
               topics.map((topic: Topic, index: number) => (
