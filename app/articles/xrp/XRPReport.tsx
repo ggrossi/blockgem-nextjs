@@ -121,7 +121,6 @@ export default function XRPReport() {
               textSizeAdjust: '100%',
               boxShadow: 'inset 0 -20px 0 0 #262B38',
               padding: '1px',
-              padding: '0px',
               margin: '0px',
               width: '100%'
             }}
