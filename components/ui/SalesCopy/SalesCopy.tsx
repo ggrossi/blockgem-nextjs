@@ -11,7 +11,12 @@ const SalesCopy = () => {
             Brought to you by former members of
           </p>
           <div className="flex justify-center items-center mb-24 mt-8">
-            <Image src="/binance-logo.svg" alt="binance logo" width={250} height={50} />
+            <Image
+              src="/binance-logo.svg"
+              alt="binance logo"
+              width={250}
+              height={50}
+            />
           </div>
         </div>
         <div className="sm:flex sm:flex-col sm:align-center">

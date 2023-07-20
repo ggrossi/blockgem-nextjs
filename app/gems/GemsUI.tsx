@@ -58,7 +58,7 @@ export default function GemsUI() {
             Unearth Hidden Crypto Gems
           </h2>
           <p className="max-w-4xl m-auto mt-5 text-xl text-lighten sm:text-4xl font-extrabold sm:text-center mb-24">
-            Discover potential {' '}
+            Discover potential{' '}
             <span className="text-rose-400">crypto breakthrough </span>
             with our comprehensive Signals database.
           </p>
