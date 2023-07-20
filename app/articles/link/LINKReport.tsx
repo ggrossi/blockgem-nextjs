@@ -85,7 +85,6 @@ export default function LINKReport() {
             colorTheme="dark"
             isTransparent={true}
             width="100%"
-            width="100%"
           ></MiniChart>
           <p className="max-w-2xl m-auto mt-5 text-xl text-lighten sm:text-2xl text-zinc-200 pb-4">
             Chainlink's price has seen significant changes over the past 12
